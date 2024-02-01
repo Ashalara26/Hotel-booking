@@ -1,5 +1,4 @@
 import Stripe from 'stripe';
-
 import { authOptions } from '@/libs/auth';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
@@ -41,6 +40,7 @@ export async function POST(req: Request, res: Response) {
   const origin = req.headers.get('origin');
 
   const session = await getServerSession(authOptions);
+  console.log(session);
 
   if (!session) {
     return new NextResponse('Authentication required', { status: 400 });

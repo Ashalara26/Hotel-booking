@@ -92,7 +92,7 @@ const Auth = () => {
           <input
             type='text'
             name='name'
-            placeholder='John Doe'
+            placeholder='Your Name '
             required
             className={inputStyles}
             value={formData.name}
@@ -118,7 +118,7 @@ const Auth = () => {
         </form>
 
         <button onClick={loginHandler} className='text-blue-700 underline'>
-          login
+          Login
         </button>
       </div>
     </section>

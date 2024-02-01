@@ -70,7 +70,7 @@ const Search: FC<Props> = ({
           type='button'
           onClick={handleFilterClick}
         >
-          Search
+        Search
         </button>
       </div>
     </section>

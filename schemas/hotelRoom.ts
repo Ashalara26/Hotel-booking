@@ -1,12 +1,12 @@
-import { defineField } from 'sanity';
+import { defineField,defineType } from 'sanity';
 
-const roomTypes = [
+const roomType= [
   { title: 'Basic', value: 'basic' },
-  { title: 'Luxury', value: 'luxury' },
+  { title: 'Luxury', value: 'luxury'},
   { title: 'Suite', value: 'suite' },
 ];
 
-const hotelRoom = {
+const hotelRoom = defineType({
   name: 'hotelRoom',
   title: 'Hotel Room',
   type: 'document',
@@ -30,14 +30,14 @@ const hotelRoom = {
       name: 'description',
       title: 'Description',
       type: 'text',
-      validation: Rule =>
+        validation: Rule =>
         Rule.required().min(100).error('Minimum 100 Characters'),
     }),
     defineField({
       name: 'price',
       title: 'Price',
       type: 'number',
-      validation: Rule =>
+       validation: Rule =>
         Rule.required().min(100).error('Minimum 100 Characters'),
     }),
     defineField({
@@ -60,7 +60,7 @@ const hotelRoom = {
           ],
         },
       ],
-      validation: Rule =>
+       validation: Rule =>
         Rule.required().min(3).error('Minimum of 3 images required'),
     }),
     defineField({
@@ -78,7 +78,7 @@ const hotelRoom = {
       title: 'Room Type',
       type: 'string',
       options: {
-        list: roomTypes,
+        list: roomType,
       },
       validation: Rule => Rule.required(),
       initialValue: 'basic',
@@ -107,7 +107,7 @@ const hotelRoom = {
       name: 'offeredAmenities',
       title: 'Offered Amenities',
       type: 'array',
-      of: [
+       of: [
         {
           type: 'object',
           fields: [
@@ -136,6 +136,6 @@ const hotelRoom = {
       of: [{ type: 'review' }],
     }),
   ],
-};
+});
 
 export default hotelRoom;

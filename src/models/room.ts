@@ -19,6 +19,7 @@ type Slug = {
 };
 
 export type Room = {
+  room: Image;
   _id: string;
   coverImage: CoverImage;
   description: string;

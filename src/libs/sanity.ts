@@ -1,11 +1,16 @@
-import { createClient } from 'next-sanity';
+import { createClient, type ClientConfig } from "@sanity/client";
 
-const sanityClient = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
-  useCdn: process.env.NODE_ENV === 'production',
-  token: process.env.SANITY_STUDIO_TOKEN,
-  apiVersion: '2021-10-21',
-});
+const config: ClientConfig = ({
+    projectId: "410gf1lx",
+    dataset: "production",
+    apiVersion: "2021-10-21",
+    token: process.env.SANITY_ACCESS_TOKEN,
+    useCdn: process.env.NODE_ENV === 'production',
+  });
 
-export default sanityClient;
+const client = createClient(config);
+
+export default client;
+
+
+

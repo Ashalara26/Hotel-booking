@@ -21,6 +21,7 @@ export const authOptions: NextAuthOptions = {
     strategy: 'jwt',
   },
   adapter: SanityAdapter(sanityClient),
+  
   debug: process.env.NODE_ENV === 'development',
   secret: process.env.NEXTAUTH_SECRET,
   callbacks: {
