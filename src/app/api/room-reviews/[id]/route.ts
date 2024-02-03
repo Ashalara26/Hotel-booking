@@ -18,4 +18,4 @@ export async function GET(
     console.log('Getting Review Failed', error);
     return new NextResponse('Unable to fetch', { status: 400 });
   }
-}
+};

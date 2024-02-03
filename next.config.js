@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- output: 'export',
+  output: 'export',
   images: {
-    domains: ['lh3.googleusercontent.com', 'images.unsplash.com','unsplash.com','plus.unsplash.com','avatars.githubusercontent.com'],
+     domains: ['lh3.googleusercontent.com', 'images.unsplash.com','unsplash.com','plus.unsplash.com','avatars.githubusercontent.com'],
   },
   // output: 'export',
 };
